@@ -1,0 +1,6 @@
+4
+Firms1 short_F1 country_F1 region_F1 town_F1 street_F1 postInx_F1 date_in_F1 email_F1 web_F1
+Firms2 short_F2 country_F1 region_F1 town_F2 street_F2 postInx_F2 date_in_F2 email_F2 web_F2
+Firms3 short_F3 country_F1 region_F1 town_F3 street_F3 postInx_F3 date_in_F3 email_F3 web_F3
+Firms4 short_F4 country_F2 region_F1 town_F1 street_F4 postInx_F4 date_in_F4 email_F4 web_F4
+
