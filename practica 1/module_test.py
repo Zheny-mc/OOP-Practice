@@ -22,8 +22,11 @@ class InitData:
                     web=obj[9]
                 )
                 list_firm.append(firm)
-            # return len(lst_firm) == n
-            return list_firm
+
+            if len(list_firm) == n:
+                return list_firm
+            else:
+                raise ValueError('Список фирм создан неверно!')
 
     @staticmethod
     def create_list_contacts() -> List[Tuple[str, TypeContact]]:
@@ -40,8 +43,11 @@ class InitData:
                 contact: TypeContact = FirmFactory.create_contact(name=obj[0], tpy=dct[obj[2]])
                 contact.update({'note': obj[2], 'descr': obj[3], 'data_info': obj[4]})
                 lst.append((obj[5], contact))
-            return lst
-            # return len(lst) == n
+
+            if len(lst) == n:
+                return lst
+            else:
+                raise ValueError('Список контактов создан неверно!')
 
     @staticmethod
     def create_list_departments() -> List[Tuple[str, TypeDepartment]]:
@@ -57,8 +63,10 @@ class InitData:
                 obj = f.readline().rstrip().split()
                 department = FirmFactory.create_department(obj[0], dct[obj[5]])
                 lst.append((obj[6], department))
-            return lst
-            # return len(lst) == n
+            if len(lst) == n:
+                return lst
+            else:
+                raise ValueError('Список подразделений создан неверно!')
 
     @classmethod
     def create_full_lst_firms(cls) -> List[Firm]:
@@ -84,10 +92,12 @@ class InitData:
 class SimplisticTest(unittest.TestCase):
 
     def test_find_firm_by_name(self):
+        ''' Поиск фирм по имени '''
         lst_firm: List[Firm] = InitData.create_full_lst_firms()
         self.assertTrue(len(ListFirm(lst_firm).find_by_name('Firms1')) == 1)
 
     def test_find_firm_by_country(self):
+        ''' Поиск фирм по городу '''
         lst_firm: List[Firm] = InitData.create_full_lst_firms()
         self.assertTrue(len(ListFirm(lst_firm).find_by_country('country_F1')) == 3)
 

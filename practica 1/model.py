@@ -3,6 +3,7 @@ from enum import Enum
 import datetime
 from typing import Tuple
 
+
 class ContTypeCol(Enum):
     F = 'Коммерческое предложение'
     S = 'Послать письмо'
@@ -141,6 +142,7 @@ class MainOffice(TypeDepartment):
     def __repr__(self) -> str:
         return f'{{Тип: {self.tpy}, Офис главный? {"да" if self._is_main else "нет"}, имя: {self._name} }}'
 
+
 class MarketingDepartment(TypeDepartment):
 
     def __init__(self, name: str,
@@ -155,6 +157,7 @@ class MarketingDepartment(TypeDepartment):
 
     def __repr__(self) -> str:
         return f'{{Тип: {self.tpy}, Офис главный? {"да" if self._is_main else "нет"}, имя: {self._name} }}'
+
 
 class Firm:
     def __init__(
@@ -181,6 +184,8 @@ class Firm:
         self.__email = email
         self.__web = web
         self.__departments = departments if departments else list()
+        # 5 дополнительных  полей
+        self.__additional_fields = {}
 
     # ------------ геттеры --------------
     def get_name(self):
@@ -215,6 +220,18 @@ class Firm:
 
     def get_all_department(self):
         return self.__departments
+
+    def get_all_additional_field(self):
+        return self.__additional_fields
+
+    def get_additional_field(self, key):
+        return self.__additional_fields[key]
+
+    def update_additional_field(self, key, value):
+        self.__additional_fields[key] = value
+
+    def delete_additional_field(self, key, value):
+        del self.__additional_fields[key]
 
     # ------------------------------------
     def add_cont(self, cont):
