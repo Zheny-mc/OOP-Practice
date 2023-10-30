@@ -1,7 +1,0 @@
-5
-name_C1 note_C1 f descr_C1 data_info_C1 name_D1
-name_C2 note_C2 s descr_C2 data_info_C2 name_D2
-name_C3 note_C3 f descr_C3 data_info_C3 name_D3
-name_C4 note_C4 s descr_C4 data_info_C4 name_D4
-name_C5 note_C5 s descr_C5 data_info_C5 name_D5
-name_C6 note_C6 s descr_C6 data_info_C6 name_D6

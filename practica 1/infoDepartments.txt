@@ -1,7 +1,0 @@
-6
-name_D1 boss_name_D1 ofb_boss_name_D1 tel_D1 email_D1 f short_F1
-name_D2 boss_name_D2 ofb_boss_name_D2 tel_D2 email_D2 f short_F2
-name_D3 boss_name_D3 ofb_boss_name_D3 tel_D3 email_D3 s short_F1
-name_D4 boss_name_D4 ofb_boss_name_D4 tel_D4 email_D4 s short_F2
-name_D5 boss_name_D5 ofb_boss_name_D5 tel_D5 email_D5 f short_F3
-name_D6 boss_name_D6 ofb_boss_name_D6 tel_D6 email_D6 f short_F4
