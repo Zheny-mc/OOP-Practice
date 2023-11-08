@@ -6,7 +6,7 @@ from SbFirmType import SbFirmType
 
 class SubFirm:
 
-    def __init__(self) -> None:
+    def __init__(self, sb_firmtpy=None) -> None:
         self.__boss_name: str = None
         self.__email: str = None
         self.__name: str = None
@@ -14,7 +14,7 @@ class SubFirm:
         self.__tel: str = None
 
         self.contacts: List[Contact] = list()
-        self.sb_firmtpy: SbFirmType = None
+        self.sb_firmtpy: SbFirmType = sb_firmtpy
 
     # ---------- геттеры и сеттеры -----------
     @property
