@@ -1,5 +1,4 @@
 from typing import List
-
 from Contact import Contact
 from SbFirmType import SbFirmType
 
@@ -58,7 +57,7 @@ class SubFirm:
         self.__tel = value
 
     # ------------ методы ---------------
-    def add_contact(self, new_contact):
+    def add_contact(self, new_contact: Contact):
         self.contacts.append(new_contact)
 
     def exist_contact(self, contact_for_search: Contact) -> bool:

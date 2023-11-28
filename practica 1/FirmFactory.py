@@ -1,14 +1,19 @@
-from typing import Dict
+from typing import Dict, List
 
 from Firm import Firm
-from SbFirmType import SbFirmType
-from SubFirm import SubFirm
 
 
 class FirmFactory:
+    name: str = ''
+    region: str = ''
+    usr_fields: Dict[str, str] = {
+        "field1": "",
+        "field2": "",
+        "field3": "",
+        "field4": "",
+        "field5": ""
+    }
 
-    def __init__(self, usr_fields=None) -> None:
-        self.usr_fields: Dict[str] = usr_fields
-
-    def create(self, name: str=None, region: str=None) -> Firm:
-        return Firm(name, region, self.usr_fields)
+    @classmethod
+    def create(cls) -> Firm:
+        return Firm(cls.name, cls.region, cls.usr_fields)

@@ -3,6 +3,7 @@ from typing import Dict, List
 from Contact import Contact
 from SbFirmType import SbFirmType
 from SubFirm import SubFirm
+from SubFirmTypeCol import SubFirmTypeCol
 
 
 class Firm:
@@ -115,7 +116,7 @@ class Firm:
 
     def add_cont_to_sb_firm(self, new_contact: Contact):
         for cur_sub in self.sb_firms:
-            cur_sub.add_contact(new_contact)
+            cur_sub.add_contact(new_contact.clone())
 
     def add_field(self, field_name: str, value: str):
         self.usr_fields[field_name] = value
@@ -130,7 +131,7 @@ class Firm:
         return False
 
     def get_field(self, key: str) -> str:
-        if self.usr_fields[key]:
+        if self.usr_fields[key] is not None:
             return self.usr_fields[key]
         else:
             raise ValueError('key not found')
@@ -147,17 +148,10 @@ class Firm:
 
     def get_main(self):
         ''' Получить главное подразделение '''
-        return (
-            self.__country,
-            self.__date_in,
-            self.__email,
-            self.__name,
-            self.__post_inx,
-            self.__region,
-            self.__street,
-            self.__town,
-            self.__web
-        )
+        sb_firm: SubFirm = SubFirmTypeCol.MAIN_OFFICE.value.clone()
+        sb_firm.name = self.__name
+        sb_firm.email = self.__email
+        return sb_firm
 
     def __eq__(self, __o: object) -> bool:
         if not isinstance(__o, Firm):
